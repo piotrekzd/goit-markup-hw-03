@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   --main-font: 'Roboto', sans-serif;
   --secondary-font: 'Raleway', sans-serif;
@@ -5,6 +11,9 @@
   --blue-color: #2196f3;
   --grey-color: #757575;
   --white-color: #ffffff;
+  --header-border: #ececec;
+  --title-background: #2f303a;
+  --crew-background: #f5f4fa;
 }
 
 body {
@@ -12,46 +21,61 @@ body {
   color: var(--main-color);
 }
 
-.logo-up,
-.logo-footer,
-.menu-agency,
-.menu-contact,
-.menu-portfolio,
-.contact-mail,
-.contact-tel,
-.address-list-nav,
-.address-list-mail,
-.address-list-tel {
+img {
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  padding: 0;
+}
+
+.link {
   text-decoration: none;
 }
 
-.logo-up:hover,
-.logo-footer:hover,
-.menu-agency:hover,
-.menu-contact:hover,
-.menu-portfolio:hover,
-.contact-mail:hover,
-.contact-tel:hover,
-.address-list-nav:hover,
-.address-list-mail:hover,
-.address-list-tel:hover {
+.link:hover,
+.link:focus {
   color: var(--blue-color);
 }
 
-.logo-up:focus,
-.logo-footer:focus,
-.menu-agency:focus,
-.menu-contact:focus,
-.menu-portfolio:focus,
-.contact-mail:focus,
-.contact-tel:focus,
-.address-list-nav:focus,
-.address-list-mail:focus,
-.address-list-tel:focus {
-  color: var(--blue-color)
+.container {
+  width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+/* header */
+
+.header {
+  border-bottom: 1px solid var(--header-border);
+}
+
+.header .container {
+  display: flex;
+  background: var(--white-color);
 }
 
 .logo-up {
+  padding-right: 93px;
+  padding-top: 24px;
+  padding-bottom: 25px;
   font-family: var(--secondary-font);
   font-weight: 700;
   font-size: 26px;
@@ -64,24 +88,34 @@ body {
   color: var(--blue-color);
 }
 
-.menu {
+.menu-navigation {
+  display: flex;
+  padding-top: 32px;
+  padding-bottom: 32px;
   list-style: none;
+}
+
+.navigation-list-item {
+  width: 53px;
+  height: 16px;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
 }
 
+.navigation-list-item:not(:last-child) {
+  margin-right: 46px;
+}
+
 .menu-agency,
 .menu-portfolio,
 .menu-contact {
-  width: 53px;
-  height: 16px;
-  letter-spacing: 0.02em;
-  color: #212121;
+  color: var(--main-color);
 }
 
 .contact {
+  display: flex;
   list-style: none;
   font-weight: 500;
   font-size: 14px;
@@ -89,6 +123,9 @@ body {
 }
 
 .contact-mail {
+  padding-top: 24px;
+  padding-bottom: 25px;
+  padding-left: 371px;
   width: 135px;
   height: 16px;
   letter-spacing: 0.02em;
@@ -96,17 +133,29 @@ body {
 }
 
 .contact-tel {
+  padding-left: 50px;
   width: 110px;
   height: 16px;
   letter-spacing: 0.02em;
   color: var(--grey-color);
 }
 
+/* header-end */
+
+/* main */
+
 .title {
-  background: #2f303a;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  background: var(--title-background);
 }
 
 .title-info {
+  width: 696px;
+  padding-bottom: 30px;
+  margin-left: 252px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -119,6 +168,8 @@ body {
 .order-button {
   width: 200px;
   height: 50px;
+  margin-left: 500px;
+  align-items: center;
   color: var(--white-color);
   background: var(--blue-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -130,11 +181,26 @@ body {
   cursor: pointer;
 }
 
+.order-button:focus {
+  color: var(--white-color);
+}
+
+/* main-end */
+
+/* lorem */
+
+.lorem {
+  display: flex;
+}
+
 .lorem-list {
+  display: flex;
+  align-items: center;
   list-style: none;
 }
 
 .lorem-list-title {
+  display: flex;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.17;
@@ -142,37 +208,63 @@ body {
   text-transform: uppercase;
 }
 
-.lorem-list-item {
+.lorem-list-content {
+  display: flex;
+  align-items: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-transform: none;
-  letter-spacing: 0.03em;
   color: var(--grey-color);
 }
 
+.lorem-list-item:not(:last-child) {
+  padding-right: 30px;
+}
+
+/* lorem-end */
+
+/* about */
+
+.about .about-list {
+  display: flex;  
+  justify-content: space-between;
+}
+
 .about-title {
+  margin-left: 424px;
+  margin-bottom: 50px;
   font-size: 36px;
   line-height: 1.17;
   letter-spacing: 0.03em;
 }
 
-.about-list {
+.about-list-item {
+  display: inline-flex;
   list-style: none;
 }
 
-.crew-about {
-  list-style: none;
+/* about-end */
+
+/* crew */
+
+.crew {
+  background: var(--crew-background);
 }
 
 .crew-title {
+  margin-bottom: 50px;
   font-size: 36px;
   line-height: 1.17;
+  text-align: center;
   letter-spacing: 0.03em;
 }
 
 .crew-list {
+  margin-left: -30px;
+  display: flex;
+  justify-content: space-evenly;
   list-style: none;
 }
 
@@ -182,10 +274,16 @@ body {
   letter-spacing: 0.03em;
 }
 
+.crew-list-item {
+  flex-basis: calc(100%/4-30px);
+}
+
 .crew-name {
+  padding-top: 30px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
+  text-align: center;
   letter-spacing: 0.03em;
 }
 
@@ -193,9 +291,21 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.19;
+  text-align: center;
   letter-spacing: 0.03em;
   color: var(--grey-color);
 }
+
+.crew-list-card {
+  height: 368px;
+  background-color: var(--white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* crew-end */
+
+/* btn-section */
 
 .button-section {
   list-style: none;
@@ -238,8 +348,14 @@ body {
   color: var(--grey-color);
 }
 
+/* footer */
+
 .footer {
   background-color: #2f303a;
+}
+
+.address {
+  display: block;
 }
 
 .logo-footer {
@@ -256,20 +372,26 @@ body {
 }
 
 .address-list {
+  margin-top: 20px;
   list-style: none;
 }
 
 .address-list-item {
+  margin-top: 9px;
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
 
 .address-list-nav {
+  font-style: normal;
   color: var(--white-color);
 }
 
 .address-list-mail,
 .address-list-tel {
+  font-style: normal;
   color: var(--grey-color);
 }
+
+/* footer-end */
