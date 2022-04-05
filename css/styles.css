@@ -200,18 +200,17 @@ p {
 
 /* lorem */
 
-.lorem {
+.lorem-list {
+  margin-left: -10px;
+  margin-right: 10px;
   display: flex;
 }
 
 .lorem-list {
-  display: flex;
-  align-items: center;
   list-style: none;
 }
 
 .lorem-list-title {
-  display: flex;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.17;
@@ -220,8 +219,6 @@ p {
 }
 
 .lorem-list-content {
-  display: flex;
-  align-items: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71;
